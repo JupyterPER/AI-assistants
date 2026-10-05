@@ -1701,3 +1701,26 @@ document.addEventListener('cut', (e) => {
   e.clipboardData.setData('text/plain', altered);
   e.preventDefault();
 });
+
+// Open links in a new tab
+document.addEventListener('click', function (e) {
+  const link = e.target.closest('a[href]');
+  if (!link) return;
+
+  const href = link.getAttribute('href');
+  if (!href || !/^https?:\/\//i.test(href)) return;
+
+  // Internal links are kept as they are
+  try {
+    const url = new URL(href, window.location.href);
+    if (url.hostname === window.location.hostname) return;
+  } catch (_) {
+    return;
+  }
+
+  // If link already is with the blank attribute
+  if (link.target === '_blank') return;
+
+  e.preventDefault();
+  window.open(href, '_blank', 'noopener,noreferrer');
+});
