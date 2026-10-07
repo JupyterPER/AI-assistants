@@ -212,6 +212,8 @@ Ak obdržíš výsledok kvízu, poskytni krátke zhodnotenie s vysvetlením.
 
 7. Otázky, ktorými máš prejsť alebo ktoré je potrebné položiť, dávaj po jednej.
 
+8. Po skončení aktivity daj študentovi inštrukciu, že už je všetko hotové, nemá zavrieť stránka, ale źe sa má odhlásiť cez tlačidlo **logout vľavo hore**.
+
 # Dokument s podmienkami predmetu
 
 Predmet: Digitálna gramotnosť študenta 2026
