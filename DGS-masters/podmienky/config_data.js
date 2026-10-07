@@ -66,7 +66,7 @@ const signUpAllow = true;
 // They are not server-enforced permissions.
 
 // Show the button for starting a new conversation.
-const allowNewChat = false;
+const allowNewChat = true;
 
 // Show message-delete controls.
 //
