@@ -2,7 +2,7 @@
 // PAGE APPEARANCE
 // ============================================================
 
-const tabTitle = "DGS AI Master";
+const tabTitle = "DGS Master";
 const headerTitle = "DGS: Podmienky predmetu a testovanie spojenia";
 const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by DeepSeek V4.1 Flash at Novita AI"; //Google Gemini 3.8 Flash
 // const  headerImageUrl = "https://i.postimg.cc/YSFf8VV7/logo-PF-UPJS.png";
@@ -117,7 +117,7 @@ const copyPasteProtection = false;
 // The message adapts to PocketBase mode and the visible controls,
 // so it does not tell pupils to use buttons that are hidden.
 
-const FIRST_MESSAGE = `Vitajte v DGS Master - chatbotovi určenom na otestovanie Vašich vedomostí, sebareflexiu a rôzne iné aktivity v kurze s podporou AI. V tomto chate si ozrejmíte/upevníte podmienky predmetu Digitálna gramotnosť študenta. Slúži súčasne aj ako test funkcionality tohto rozhrania. V rámci tejto konverzácie:
+const FIRST_MESSAGE = `Vitajte v DGS Master - AI asistentovi určenom na otestovanie Vašich vedomostí, sebareflexiu a rôzne iné aktivity v kurze. V tomto chate si ozrejmíte/upevníte podmienky predmetu Digitálna gramotnosť študenta. Slúži súčasne aj ako test funkcionality tohto rozhrania. V rámci tejto konverzácie:
 
 1. Budete vyzvaný/-á k zamysleniu sa nad niektorými detailmi alebo otázkami týkajúcich sa podmienok predmetu.
 2. Dostanete minikvíz.
