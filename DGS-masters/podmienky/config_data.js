@@ -2,7 +2,7 @@
 // PAGE APPEARANCE
 // ============================================================
 
-const tabTitle = "DGS AI Tutor";
+const tabTitle = "DGS AI Master";
 const headerTitle = "DGS: Podmienky predmetu a testovanie spojenia";
 const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by MiMo 2.6 Pro"; //Google Gemini 3.8 Flash
 // const  headerImageUrl = "https://i.postimg.cc/YSFf8VV7/logo-PF-UPJS.png";
