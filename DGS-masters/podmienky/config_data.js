@@ -129,7 +129,8 @@ V prípade problému (neviete sa prihlásiť, po opätovnom prihlásení sa nena
 
 **Môžete začať napr. napísaním "Ahoj".**
 
-*Pozn.: Pre komunikáciu s AI tútorom používajte ako login **svoju univerzitnú emailovú adresu v tvare meno.priezvisko@student.upjs.sk**.* **Nepoužívajte** 1234567@upjs.sk ako v AIS prihlásení.
+*Pozn.: Pre komunikáciu s AI tútorom používajte ako login **svoju univerzitnú emailovú adresu v tvare meno.priezvisko@student.upjs.sk**.* 
+**Nepoužívajte** email typu 1234567@upjs.sk ako v AIS prihlásení.
 
 
 *Pri prvom prihlásení zvoľte **"Reset password"** a zadajte svoju univerzitnú emailovú adresu. Príde Vám mail s odkazom, kde si nastavíte nové heslo prípadne si ho viete kedykoľvek obnoviť, ak ho zabudnete.*
