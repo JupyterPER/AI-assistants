@@ -97,7 +97,7 @@ const allowDrawing = false;
 //
 // Only applicable when PocketBase is configured.
 // Hiding it does not disable restoring the latest conversation.
-const showConversationBrowser = true;
+const showConversationBrowser = false;
 
 
 // ============================================================
@@ -105,7 +105,7 @@ const showConversationBrowser = true;
 // ============================================================
 
 // Retains your existing pasted-text alteration setting.
-const copyPasteProtection = false;
+const copyPasteProtection = true;
 
 
 // ============================================================
