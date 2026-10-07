@@ -4,7 +4,7 @@
 
 const tabTitle = "DGS AI Master";
 const headerTitle = "DGS: Podmienky predmetu a testovanie spojenia";
-const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by MiMo 2.6 Pro"; //Google Gemini 3.8 Flash
+const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by DeepSeek V4.1 Flash at Novita AI"; //Google Gemini 3.8 Flash
 // const  headerImageUrl = "https://i.postimg.cc/YSFf8VV7/logo-PF-UPJS.png";
 // const  headerImageUrl = "https://i.postimg.cc/tTpnTCJM/odf-ufv-logo.png";
 const  headerImageUrl = "https://i.postimg.cc/2ymVbSj0/odf-logo-full.png";
@@ -117,7 +117,7 @@ const copyPasteProtection = true;
 // The message adapts to PocketBase mode and the visible controls,
 // so it does not tell pupils to use buttons that are hidden.
 
-const FIRST_MESSAGE = `Vitajte v chate, v ktorom si ozrejmíte/upevníte podmienky predmetu Digitálna gramotnosť študenta. Slúži súčasne aj ako test funkcionality tohto rozhrania, cez ktoré sa budú realizovať aj iné aktivity s podporou AI. V rámci tejto konverzácie:
+const FIRST_MESSAGE = `Vitajte v DGS Master - chatbotovi určenom na otestovanie Vašich vedomostí, sebareflexiu a rôzne iné aktivity v kurze s podporou AI. V tomto chate si ozrejmíte/upevníte podmienky predmetu Digitálna gramotnosť študenta. Slúži súčasne aj ako test funkcionality tohto rozhrania. V rámci tejto konverzácie:
 
 1. Budete vyzvaný/-á k zamysleniu sa nad niektorými detailmi alebo otázkami týkajúcich sa podmienok predmetu.
 2. Dostanete minikvíz.
@@ -127,13 +127,15 @@ const FIRST_MESSAGE = `Vitajte v chate, v ktorom si ozrejmíte/upevníte podmien
 
 V prípade problému (neviete sa prihlásiť, po opätovnom prihlásení sa nenačíta konverzácia, niečo nefunguje a pod.), kontaktujte správcu na [**dominik.borovsky@student.upjs.sk**](mailto:dominik.borovsky@student.upjs.sk)
 
-**Môžete začať napr. napísaním "Ahoj".**
+Môžete začať napr. napísaním **"Ahoj"** alebo **"Môžeme začať"**.
 
-*Pozn.: Pre komunikáciu s AI tútorom používajte ako login **svoju univerzitnú emailovú adresu v tvare meno.priezvisko@student.upjs.sk**.* 
-**Nepoužívajte** email typu 1234567@upjs.sk ako v AIS prihlásení.
+***Poznámky***
 
-
-*Pri prvom prihlásení zvoľte **"Reset password"** a zadajte svoju univerzitnú emailovú adresu. Príde Vám mail s odkazom, kde si nastavíte nové heslo prípadne si ho viete kedykoľvek obnoviť, ak ho zabudnete.*
+* *Prihlasujte sa cez tlačidlo **"Login"** vpravo hore.*
+* *Pre komunikáciu s AI tútorom používajte ako login **svoju univerzitnú emailovú adresu v tvare meno.priezvisko@student.upjs.sk**.* 
+* ***Nepoužívajte** email typu 1234567@upjs.sk ako v AIS prihlásení (pre vyučujúcich tak môže byť náročnejšie identifikovať Vašu prácu).*
+* *Ak zabudnete svoje heslo, použite **"Reset password"** a zadajte svoju univerzitnú emailovú adresu. Príde Vám mail s linkom, kde si nastavíte nové heslo.*
+* *Použite **"Resend verification email"** v prípade, že link na verifikáciu pri Vaše registrácii expiroval alebo ak chcete overiť, či existuje účet naviazaný na Vašu emailovú adresu.*
 `
 
 
