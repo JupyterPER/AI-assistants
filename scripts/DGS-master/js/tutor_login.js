@@ -1205,9 +1205,17 @@
 
     const suffix = localStorage.getItem("api_key");
 
-    return suffix
-      ? API_FIRST_PART + suffix
-      : null;
+    if (!suffix) return null;
+
+    const key = API_FIRST_PART + suffix;
+
+    // Only normalize when a % is present; otherwise
+    // behave exactly as before.
+    if (key.includes("%")) {
+      return key.replace(/%/g, "") || null;
+    }
+
+    return key.trim() || null;
   }
 
   function buildUserContent(text, attachments) {
