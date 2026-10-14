@@ -4,7 +4,7 @@
 
 const tabTitle = "DGS Master";
 const headerTitle = "DGS: Podmienky predmetu a testovanie spojenia";
-const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by DeepSeek V4.1 Flash at Novita AI"; //Google Gemini 3.8 Flash
+const copyrightText = "© 2026 Dominik Borovský & Jozef Hanč v2.3, powered by Claude Haiku 5.5 (Anthropic)"; //Google Gemini 3.8 Flash
 // const  headerImageUrl = "https://i.postimg.cc/YSFf8VV7/logo-PF-UPJS.png";
 // const  headerImageUrl = "https://i.postimg.cc/tTpnTCJM/odf-ufv-logo.png";
 const  headerImageUrl = "https://i.postimg.cc/2ymVbSj0/odf-logo-full.png";
