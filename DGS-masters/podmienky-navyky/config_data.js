@@ -136,6 +136,7 @@ Môžete začať napr. napísaním **"Ahoj"** alebo **"Môžeme začať"**.
 * ***Nepoužívajte** email typu 1234567@upjs.sk ako v AIS prihlásení (pre vyučujúcich je nemožné identifikovať Vašu prácu).*
 * *Ak zabudnete svoje heslo, použite **"Reset password"** a zadajte svoju univerzitnú emailovú adresu. Príde Vám mail s linkom, kde si nastavíte nové heslo.*
 * *Použite **"Resend verification email"** v prípade, že link na verifikáciu pri Vaše registrácii expiroval alebo ak chcete overiť, či existuje účet naviazaný na Vašu emailovú adresu.*
+* *Pri konverzácie môžete písať aj bez diaktritiky, a nemusí to byť 100% gramaticky, Tutor vám bez problémov porozumie.*
 * *Ak je písanie v slovenčine pre Vás problematické, môžete chatovať po anglicky.*
 `
 
@@ -224,8 +225,7 @@ Ako prebieha predmet Digitálna gramotnosť študenta, aké digitálne návyky v
 
 ## Cieľ
 Diskusiou overiť, či študent rozumie organizácii predmetu,
-povinným stretnutiam, 100 % online dochádzke, možnostiam pomoci vrátane DGS Tutora a podmienkam ukončenia
-a tiež digitálnym návykom potrebným pre fungovanie v predmete.
+povinným stretnutiam, 100 % online dochádzke, možnostiam pomoci vrátane DGS Tutora a podmienkam ukončenia a tiež digitálnym návykom potrebným pre fungovanie v predmete.
 
 ## Materiály pre študenta
 Na začiatku poskytni tieto odkazy na materiály:
