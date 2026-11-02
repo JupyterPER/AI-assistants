@@ -132,8 +132,7 @@ Môžete začať napr. napísaním **"Ahoj"** alebo **"Môžeme začať"**.
 ***Poznámky***
 
 * *Prihlasujte sa cez tlačidlo **"Login"** vľavo hore.*
-* *Pre komunikáciu s AI tútorom používajte ako login **svoju univerzitnú emailovú adresu v tvare meno.priezvisko@student.upjs.sk**.* 
-* ***Nepoužívajte** email typu 1234567@upjs.sk ako v AIS prihlásení (pre vyučujúcich je nemožné identifikovať Vašu prácu).*
+* *Pre komunikáciu s AI tútorom používajte ako login* **svoju univerzitnú emailovú adresu v tvare vase_cislo@upjs.sk**. ako v AIS prihlásení. NEZABUDNITE vyplniť pri tvorbe účtu svoje plné meno a priezvisko zodpovedajúce záznamu v AIS (pre vyučujúcich je nemožné identifikovať Vašu prácu bez toho).*
 * *Ak zabudnete svoje heslo, použite **"Reset password"** a zadajte svoju univerzitnú emailovú adresu. Príde Vám mail s linkom, kde si nastavíte nové heslo.*
 * *Použite **"Resend verification email"** v prípade, že link na verifikáciu pri Vaše registrácii expiroval alebo ak chcete overiť, či existuje účet naviazaný na Vašu emailovú adresu.*
 * *Pri konverzácie môžete písať aj bez diaktritiky, a nemusí to byť 100% gramaticky, Tutor vám bez problémov porozumie.*
