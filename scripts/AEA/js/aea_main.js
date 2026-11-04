@@ -10,7 +10,7 @@
     purify: "https://cdn.jsdelivr.net/npm/dompurify@3.4.12/dist/purify.min.js",
     app:    "https://cdn.jsdelivr.net/gh/JupyterPER/AI-assistants@main/scripts/AEA/js/aea_tutor_app.js",
     // app:    "aea_tutor_app.js",
-    login:  "https://cdn.jsdelivr.net/gh/JupyterPER/AI-assistants@main/scripts/DGS-master/js/aea_tutor_login.js"
+    login:  "https://cdn.jsdelivr.net/gh/JupyterPER/AI-assistants@main/scripts/AEA/js/aea_tutor_login.js"
     // login:  "aea_tutor_login.js"
   };
 
