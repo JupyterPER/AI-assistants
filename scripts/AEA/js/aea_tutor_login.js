@@ -29,6 +29,15 @@
   const ANON_EMAIL_DOMAIN = "anon.example.com";
   const ANON_STORAGE_KEY = "tutor_anon_account:" + PB_URL;
 
+  // Non-persistent anonymous mode: a brand-new random identity is
+  // prepared on every page load, so the visitor's history is not
+  // carried between visits. The account is still created only when
+  // the visitor starts the chat (see the start gate).
+  const FRESH_ANON =
+    ANON_MODE &&
+    typeof freshAnonOnLoad !== "undefined" &&
+    freshAnonOnLoad === true;
+
   const SIGNUP_ENABLED =
     DATABASE_MODE &&
     !ANON_MODE &&
@@ -104,9 +113,13 @@
   }
 
   function savedMessage() {
-    return ANON_MODE
-      ? "✓ Saved (anonymous profile on this device)."
-      : "✓ Saved to your account.";
+    if (ANON_MODE) {
+      return FRESH_ANON
+        ? "✓ Saved (anonymous visit)."
+        : "✓ Saved (anonymous profile on this device).";
+    }
+
+    return "✓ Saved to your account.";
   }
 
   function setStatus(text) {
@@ -313,10 +326,12 @@
       anonSignInPromise = (async () => {
         let credentials = loadAnonCredentials();
 
-        if (!credentials) {
+        if (FRESH_ANON || !credentials) {
           credentials = newAnonCredentials();
           // Store BEFORE creating, so a lost response never orphans
           // the account: the next attempt reuses the same credentials.
+          // In fresh mode this deliberately overwrites any previous
+          // visit's credentials, so its history is not resumed.
           storeAnonCredentials(credentials);
         }
 
@@ -389,6 +404,71 @@
       await saveCurrent();
       setStatus("✓ Connected.");
     }
+  }
+
+  // ----------------------------------------------------------
+  // Anonymous start gate
+  // ----------------------------------------------------------
+  // New visitors first see a small panel instead of the chat. The
+  // anonymous account and its records are created only after the
+  // visitor agrees to the anonymized data collection and starts the
+  // chat. Returning devices (persistent mode) skip the gate.
+
+  let anonGateEl = null;
+
+  function showAnonGate() {
+    anonGateEl = document.createElement("div");
+    anonGateEl.id = "tutorAnonGate";
+
+    // const title = document.createElement("strong");
+    // title.textContent = "AI tutor chat";
+    // anonGateEl.appendChild(title);
+
+    const dataNote = document.createElement("p");
+    dataNote.textContent =
+      "This chat saves anonymized data: your messages are stored " +
+      "under a random, nameless profile " +
+      (FRESH_ANON ? "for this visit" : "bound to this device") +
+      ". No personal data that could identify you is collected.";
+    anonGateEl.appendChild(dataNote);
+
+    const consentNote = document.createElement("p");
+    consentNote.textContent =
+      "By starting the chat you agree to this anonymized " +
+      "data collection.";
+    anonGateEl.appendChild(consentNote);
+
+    const startBtn = document.createElement("button");
+    startBtn.type = "button";
+    startBtn.textContent = FRESH_ANON
+      ? "Start chat"
+      : "Start / Load chat";
+
+    startBtn.addEventListener("click", () => {
+      run(async () => {
+        setStatus("Starting the chat…");
+
+        // Creates the anonymous account on first use, then restores
+        // (persistent mode) or starts the conversation. The input is
+        // disabled until this succeeds, so no message can be lost.
+        await connectAnon();
+
+        hideAnonGate();
+      });
+    });
+
+    anonGateEl.appendChild(startBtn);
+
+    chatBox.appendChild(anonGateEl);
+
+    setStatus("Start the chat to begin.");
+    updateUI();
+  }
+
+  function hideAnonGate() {
+    anonGateEl?.remove();
+    anonGateEl = null;
+    updateUI();
   }
 
   function pbRequest(path, method = "GET", body) {
@@ -2102,7 +2182,8 @@
     newChatBtn.disabled = locked;
 
     // Anonymous mode: no login/logout; the button only appears as
-    // "Reconnect" while the conversation is not open.
+    // "Reconnect" while the conversation is not open (for example
+    // after a failed start, including from the start gate).
     loginBtn.hidden = !DATABASE_MODE || (ANON_MODE && ready);
     loginBtn.disabled = busy;
     loginBtn.textContent = ANON_MODE
@@ -2189,6 +2270,33 @@
       }
       #toast {
         z-index: 2000; /* anything above the modal */
+      }
+
+      #tutorAnonGate {
+        display: grid;
+        justify-items: start;
+        gap: 10px;
+        margin: 24px 16px;
+        padding: 18px 20px;
+        background: #f8fafc;
+        border: 1px solid #d6dbe4;
+        border-radius: 12px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      #tutorAnonGate p {
+        margin: 0;
+        color: #444;
+      }
+
+      #tutorAnonGate button {
+        flex: initial;
+        min-width: auto;
+        max-width: none;
+        height: auto;
+        padding: 9px 16px;
+        font-size: 13px;
       }
 
       #tutorTools {
@@ -2365,7 +2473,10 @@
 
     loginBtn = createButton("Log in", () => {
       if (ANON_MODE) {
-        void run(connectAnon);   // manual "Reconnect" after a failure
+        // Manual "Reconnect" after a failure; also usable while the
+        // start gate is shown.
+        hideAnonGate();
+        void run(connectAnon);
       } else if (auth) {
         run(logout);
       } else {
@@ -2796,7 +2907,14 @@
       }
 
       if (ANON_MODE) {
-        await run(connectAnon);
+        if (FRESH_ANON || !loadAnonCredentials()) {
+          // New (or non-persistent) visitor: show the consent gate.
+          // The account and records are created only after "Start".
+          showAnonGate();
+        } else {
+          // Returning device: restore the previous chat immediately.
+          await run(connectAnon);
+        }
       } else if (getPasswordResetToken()) {
         setStatus("Choose a new password for your account.");
         passwordConfirmDialog.showModal();
