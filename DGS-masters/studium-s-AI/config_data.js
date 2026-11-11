@@ -52,7 +52,7 @@ const POCKETBASE_CONVERSATIONS_COLLECTION = "dgs_conversations";
 //
 // Use a different value for another activity.
 // Keep this unchanged when you only change the page title.
-const CHAT_ORIGIN = "dgs2026-requirements";
+const CHAT_ORIGIN = "dgs2026-study-with-AI-04";
 
 // Allow sign up by the users themselves
 const signUpAllow = true;
